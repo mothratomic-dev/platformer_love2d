@@ -1,0 +1,14 @@
+name = "Platformer"
+love_version = "11.5"
+default_targets = ["macos", "win64"]
+build_directory = "build"
+
+# Files packed into the .love: tracked files only, minus dev configs
+love_files = [
+    "::git-ls-tree::",
+    "-*/.*",
+    "-./makelove.toml",
+    "-./selene.toml",
+    "-./love.yml",
+    "-./readme.md",
+]
