@@ -1,3 +1,18 @@
+-- STATE (local) --
+local player, groundY, shakeY
+local sfx, sfxDoubleJump
+
+-- HOT RELOAD (lurker)
+-- Reloading main.lua resets the locals above, so re-run love.load
+local lurker = require("lib.lurker")
+lurker.postswap = function(file)
+    if file == "main.lua" then
+        love.load()
+    end
+end
+
+-- -----------------------------------------------------
+
 function love.load()
 
     -- PLAYER --
@@ -33,6 +48,9 @@ end
 -- -----------------------------------------------------
 
 function love.update(dt)
+
+    -- HOT RELOAD (lurker)
+    lurker.update()
 
     -- C O N T R O L L E R S --
 
